@@ -595,7 +595,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 
 		<div class="col-lg-7 col-md-7 col-sm-12" data-aos="zoom-in"> 
-			<form id="gform" action="https://script.google.com/macros/s/AKfycbzY7RimB5ajDk6fTDl4Oa-D-nE13dHEgxINswWl/exec">
+			<form id="gform" method="POST"action="https://script.google.com/macros/s/AKfycbyWuwA1Fu4DCN8tsvvCP6VR1PG4hEn19qx4hIj3ig/exec">
 
                 <div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="control-group form-group">
@@ -772,24 +772,5 @@ new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 <script src="js/demo1.js"></script>
 <!-- /js for navigation -->
 <!-- /js files -->
-	<script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzY7RimB5ajDk6fTDl4Oa-D-nE13dHEgxINswWl/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script>
 </body>
 </html>
