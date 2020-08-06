@@ -28,6 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- js files -->
 <script src="js/modernizr.js"></script>
 <!-- /js files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -594,13 +595,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 
 		<div class="col-lg-7 col-md-7 col-sm-12" data-aos="zoom-in"> 
-			<form id="gform"  method="post" action="https://script.google.com/macros/s/AKfycbw_W1PaWMvUHioR1Np4q8RfWHAt_6TwAr3MycVp/exec">
+			<form id="submit-form" action="">
 
                 <div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="control-group form-group">
 						<div class="controls">
                             <label>Full Name:</label>
-                            <input type="text" name="name"class="form-control" required data-validation-required-message="Please enter your name.">
+                            <input type="text" name="Name"class="form-control" required data-validation-required-message="Please enter your name.">
                             <p class="help-block"></p>
                         </div>
                     </div>
@@ -621,7 +622,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Message:</label>
-                            <textarea class="form-control" name="message" style="resize:none"></textarea>
+                            <textarea class="form-control" name="Message" style="resize:none"></textarea>
                         </div>
                     </div>
 				</div>	
@@ -771,5 +772,24 @@ new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 <script src="js/demo1.js"></script>
 <!-- /js for navigation -->
 <!-- /js files -->
+	<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbw_W1PaWMvUHioR1Np4q8RfWHAt_6TwAr3MycVp/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 </html>
